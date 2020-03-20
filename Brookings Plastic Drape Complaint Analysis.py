@@ -11,11 +11,28 @@ import pandas as pd
 import numpy as np
 import datetime
 import dateutil.relativedelta
+#import pyodbc
+
+# Connect to 3M ODBC Database
+#class Sql: 
+#    def __init__(self, database, server="XXVIR00012,55000"):
+#        
+#        # Here we are telling python what to connect to (our SQL Server)
+#        self.cnxn = pyodbc.connect("Driver={SQL Server Native Client 11.0};
+#                                   "Server="+server+";"
+#                                   "Database="+database+";"
+#                                   "Trusted_Connection=yes;")
+#        # Initialise query attribute
+#        self.query = "-- {}\n\n-- Made in Python".format(datetime.now().strftime("%d/%m/%Y"))
+
+
+
 
 # Read Excel document with complaint data
 df = pd.read_excel('Plastic Complaints.xls')
 df = df.set_index('Creation Date')
 df = df.drop_duplicates(subset=['Complaint Nbr'], keep='first')
+
 
 # Create time stamps for CQI time frames
 d = datetime.datetime.today()
@@ -92,6 +109,9 @@ complaint_trending_year_one_months = range(1,13)
 complaint_trending_dates_year_one = str(date - dateutil.relativedelta.relativedelta(months=complaint_trending_year_one_months))
 #complaint_trending_dates_year_two = str(date - dateutil.relativedelta.relativedelta(months=complaint_trending_year_two_months))
 """
+
+#date_months = list(range(1, 25))
+
 
 date_1 = str(date - dateutil.relativedelta.relativedelta(months=1))
 date_2 = str(date - dateutil.relativedelta.relativedelta(months=2))
@@ -184,6 +204,28 @@ year_two_complaints_count = [date_23_complaints_count, date_22_complaints_count,
 
 
 # Create a line plot comparing previous 12 months of complaints to previous 12-24 months
+
+
+###Trying to place both 
+#plt.figure(figsize=(10,8))
+#plt.plot(year_one_month, year_one_complaints_count, color='#1f77b4')
+#plt.plot(year_two_month, year_two_complaints_count, color='#bdbdbd')
+#plt.xlabel('Date')
+#plt.ylabel('Number of Complaints')
+#plt.xticks(rotation=90)
+#plt.yticks(np.arange(0, 15, 1.0))
+#plt.title('Brookings Plastic Complaints - Previous 12 Months')
+#plt.grid(linestyle='dotted')
+
+
+
+
+
+
+
+
+
+
 plt.figure(figsize=(10,8))
 plt.subplot(211)
 plt.plot(year_one_month, year_one_complaints_count, color='#1f77b4')
@@ -220,7 +262,7 @@ previous_month_complaint_table = previous_month_complaint_table.sort_values('Cau
 ###### Create Bar Graph for Complaints of Prior Month ######
 
 # Create Dataframes for CQI time frames
-current_month_date_current = df.loc[group1_start_year + '-' + group1_start_month + '-1':group1_start_year + '-' + group1_start_month + '-30']
+current_month_date_current = df.loc[group1_start_year + '-' + group1_start_month + '-1':group1_start_year + '-' + group1_start_month + '-29']
 
 # Create cause series for current date range
 current_month_cause_level = current_month_date_current.loc[:]['Cause Lvl 3']
@@ -242,10 +284,10 @@ plt.xlabel('Cause Level 3')
 plt.ylabel('Number of Complaints')
 plt.xticks(rotation=45)
 plt.yticks(np.arange(0, 5, step=1.0))
-plt.title('Brookings Plastic Complaint Pareto - January 2020')
+plt.title('Brookings Plastic Complaint Pareto - February 2020')
 plt.grid(linestyle='dotted')
 plt.tight_layout()
-plt.savefig('Brookings Plastic Complaint Pareto - January 2020')
+plt.savefig('Brookings Plastic Complaint Pareto - February 2020')
 
 
 """
