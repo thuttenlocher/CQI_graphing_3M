@@ -20,7 +20,7 @@ mail.Body = 'Here you go! :)'
 attachment1  = (r'C:\Users\a6db5zz\Documents\CQI\Brookings Incise Complaint Trending.png')
 attachment2  = (r'C:\Users\a6db5zz\Documents\CQI\Brookings Incise Complaint Pareto - Yearly Comparison.png')
 attachment3  = (r'C:\Users\a6db5zz\Documents\CQI\Brookings Incise CPM - Previous 11 Months.png')
-attachment4  = (r'C:\Users\a6db5zz\Documents\CQI\Brookings Incise Complaint Pareto - January 2020.png')
+attachment4  = (r'C:\Users\a6db5zz\Documents\CQI\Brookings Incise Complaint Pareto - February 2020.png')
 #attachment5  = (r'C:\Users\a6db5zz\Documents\CQI\Brookings Incise Complaint Pareto - December 2019.png')
        
 mail.Attachments.Add(attachment1)
@@ -46,7 +46,7 @@ mail.Body = 'Here you go! :)'
 attachment6  = (r'C:\Users\a6db5zz\Documents\CQI\Brookings Plastic CPM - Previous 11 Months.png')
 attachment7  = (r'C:\Users\a6db5zz\Documents\CQI\Brookings Plastic Complaint Pareto - Yearly Comparison.png')
 attachment8  = (r'C:\Users\a6db5zz\Documents\CQI\Brookings Plastic Complaint Trending.png')
-attachment9  = (r'C:\Users\a6db5zz\Documents\CQI\Brookings Plastic Complaint Pareto - January 2020.png')
+attachment9  = (r'C:\Users\a6db5zz\Documents\CQI\Brookings Plastic Complaint Pareto - February 2020.png')
 #attachment10  = (r'C:\Users\a6db5zz\Documents\CQI\Brookings Plastic Complaint Pareto - December 2019.png')
        
 mail.Attachments.Add(attachment6)
