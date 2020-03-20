@@ -5,6 +5,9 @@ Created on Thu Apr 11 16:16:36 2019
 @author: a6db5zz
 """
 
+#File where manufacturing numbers are located
+#\\bkfp01\BK-Common\eng\Holt\Drape\CQI\CQI - Drape\Production History - Drape.xlsm
+
 #Import stuff
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -67,7 +70,7 @@ combination_zero_sorted.plot.bar(rot=0, color=['#1f77b4', '#bdbdbd'], alpha=0.7,
 plt.xlabel('Cause Level 3')
 plt.ylabel('Number of Complaints')
 plt.xticks(rotation=90)
-plt.yticks(np.arange(0, 25, 2.0))
+plt.yticks(np.arange(0, 29, 2.0))
 plt.title('Brookings Incise Complaint Pareto - Yearly Comparison')
 plt.grid(linestyle='dotted')
 plt.tight_layout()
@@ -212,7 +215,7 @@ previous_month_complaint_table = previous_month_complaint_table.sort_values('Cau
 ###### Create Bar Graph for Complaints of Prior Month ######
 
 # Create Dataframes for CQI time frames
-current_month_date_current = df.loc[group1_start_year + '-' + group1_start_month + '-1':group1_start_year + '-' + group1_start_month + '-30']
+current_month_date_current = df.loc[group1_start_year + '-' + group1_start_month + '-1':group1_start_year + '-' + group1_start_month + '-29']
 
 # Create cause series for current date range
 current_month_cause_level = current_month_date_current.loc[:]['Cause Lvl 3']
@@ -234,10 +237,10 @@ plt.xlabel('Cause Level 3')
 plt.ylabel('Number of Complaints')
 plt.xticks(rotation=45)
 plt.yticks(np.arange(0, 5, 1.0))
-plt.title('Brookings Incise Complaint Pareto - January 2020')
+plt.title('Brookings Incise Complaint Pareto - February 2020')
 plt.grid(linestyle='dotted')
 plt.tight_layout()
-plt.savefig('Brookings Incise Complaint Pareto - January 2020')
+plt.savefig('Brookings Incise Complaint Pareto - February 2020')
 
 
 
