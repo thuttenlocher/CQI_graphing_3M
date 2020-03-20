@@ -17,7 +17,7 @@ import numpy as np
 # Read Excel document with complaint data
 cpm_data = pd.read_excel('Brookings CQI CPM Data.xlsx', sheet_name='Incise')
 cpm_data = cpm_data.set_index('Date')
-current_year_cpm_data = cpm_data.iloc[76:87]
+current_year_cpm_data = cpm_data.iloc[77:88]
 
 
 # Create a line plot comparing previous 12 months of complaints to previous 12-24 months
